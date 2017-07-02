@@ -490,3 +490,69 @@ a {
     background: #ff6700;
     color: #ffffff;
 }
+
+.site-category {
+   /* display: none;*/
+    position: absolute;
+    top:88px;
+    left: -92px;
+    z-index: 21;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+}
+
+.site-category-list {
+    height: 418px;
+    margin: 0;
+    padding: 20px 0;
+    border: 1px solid #ff6700;
+    color: #424242;
+    background-color: #ffffff;
+}
+
+.site-category-list .title {
+    position: relative;
+    display: block;
+    padding-left:30px;
+    height: 42px;
+    line-height: 42px;
+    color: #424242;
+}
+
+.site-category-list .title i {
+    position: absolute;
+    top:12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #e0e0e0;
+}
+
+.site-category-list .children-list {
+    height: 458px;
+    padding: 2px 0;
+}
+
+.site-category-list .children-list li {
+    position: relative;
+    float: left;
+    width: 265px;
+    height:76px;
+}
+.site-category-list .children-list li.star-goods .link {
+    width: 170px;
+    padding-right: 0;
+}
+.site-category-list .children-list .link {
+    display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333333;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+
+.site-category-list .link:hover {
+    color: #ff6700;
+}
