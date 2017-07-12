@@ -51,6 +51,39 @@ a {
     clear: both;
 }
 
+.btn {
+    display: inline-block;
+    *zoom:1;
+    *display:inline;
+    width: 158px;
+    height: 38px;
+    border: 1px solid #b0b0b0;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    color: #b0b0b0;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+}
+
+.btn:hover {
+    text-decoration: none;
+    color: #b0b0b0;
+}
+
+.btn-line-primary {
+    border-color: #ff6700;
+    background: #ffffff;
+    color: #ff6700;
+}
+
+.btn-line-primary:hover {
+    color:#fff;
+    background-color: #f25807;
+    border-color: #f25807;
+}
+
 .site-topbar {
     position: relative;
     z-index: 30;
@@ -511,13 +544,27 @@ a {
     background-color: #ffffff;
 }
 
+.site-category-list {
+    height: 420px;
+    border: 0;
+    padding: 20px 0;
+    color: #ffffff;
+    background: #333333;
+    background: rgba(0,0,0,0.6);
+}
+
+
 .site-category-list .title {
     position: relative;
     display: block;
     padding-left:30px;
     height: 42px;
     line-height: 42px;
-    color: #424242;
+    color: #fff;
+}
+
+.site-category-list .title:hover {
+    background-color: #ff6700;
 }
 
 .site-category-list .title i {
@@ -527,6 +574,24 @@ a {
     font-size: 16px;
     line-height: 16px;
     color: #e0e0e0;
+}
+
+.site-category .children {
+    display: none;
+    position: absolute;
+    left: 234px;
+    top:0;
+    z-index: 24;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left:0;
+    background: #ffffff;
+    -webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
+
+.site-category-list .children-col-3 {
+    width: 795px;
 }
 
 .site-category-list .children-list {
@@ -556,3 +621,27 @@ a {
 .site-category-list .link:hover {
     color: #ff6700;
 }
+
+.site-category-list .children-list .thumb {
+    margin-right:12px;
+    vertical-align: middle;
+}
+
+.site-category-list .children-list .text {
+    line-height: 40px;
+}
+
+.site-category-list .children-list .btn-buy {
+    position: absolute;
+    right: 10px;
+    top:26px;
+    width: 58px;
+    height: 22px;
+    line-height: 22px;
+}
+
+.site-category-list .children-list-col {
+    float: left;
+    width: 265px;
+}
+
