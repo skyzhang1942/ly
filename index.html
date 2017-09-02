@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>小米</title>
     <link type="text/css" rel="stylesheet" href="css/mi.css">
+    <link type="text/css" rel="stylesheet" href="css/mi2.css">
+    <script src="js/jquery-3.2.1.js"></script>
 </head>
 <body>
     <div class="site-topbar">
@@ -20,12 +22,14 @@
                 <a href="#">问题反馈</a><span class="sep">|</span>
                 <a href="#">Select Region</a>
             </div>
-            <div class="topbar-cart">
-                <a class="cart-mini">
-                    <i class="iconfont">&#xe60c;</i>购物车<span class="cart-mini-num J_cartNum"></span>
+            <div class="topbar-cart" id="J_miniCartTrigger">
+                <a class="cart-mini" id="J_miniCartBtn" >
+                    <i class="iconfont">&#xe60c;</i>购物车<span class="cart-mini-num J_cartNum"> (0) </span>
                 </a>
-                <div class="cart-menu">
-                    <div class="loading"><div class="loader"></div></div>
+                <div class="cart-menu" id="J_miniCartMenu">
+                    <div class="loading">
+                        <div class="loader">购物车中还没有商品，赶紧选购吧！</div>
+                    </div>
                 </div>
             </div>
             <div class="topbar-info">
@@ -40,11 +44,11 @@
                 <a class="logo ir" href="#" title="小米官网">小米官网</a>
             </div>
             <div class="header-nav">
-                <ul class="nav-list clearfix">
-                    <li class="nav-category">
-                        <a class="link-category" href="#"><span class="text">全部商品分类</span></a>
+                <ul class="nav-list J_navMainList clearfix">
+                    <li id="J_navCategory" class="nav-category">
+                        <a  class="link-category" href="#"><span class="text">全部商品分类</span></a>
                         <div class="site-category">
-                            <ul class="site-category-list clearfix">
+                            <ul id="J_categoryList" class="site-category-list clearfix">
                                 <li class="category-item">
                                     <a class="title" href="#">手机 电话卡<i class="iconfont"></i></a>
                                     <div class="children clearfix children-col-3">
@@ -96,39 +100,39 @@
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">笔记本 平板<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-2"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">电视 盒子<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-4"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">路由器 智能硬件<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-4"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">移动电源 电池 插线板<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-2"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">耳机 音响<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-4"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">保护套 贴膜<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-1"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">线材 支架 存储卡<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-1"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">箱包 服饰 鞋 眼睛<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-1"></div>
                                 </li>
                                 <li class="category-item">
                                     <a class="title" href="#">米兔 生活周边<i class="iconfont"></i></a>
-                                    <div class="children clearfix children-col-3"></div>
+                                    <div class="children clearfix children-col-1"></div>
                                 </li>
                             </ul>
                         </div>
@@ -196,7 +200,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="item-children" href="javascript:void(0);">
+                        <a class="link" href="javascript:void(0);">
                             <span class="text">红米</span>
                             <span class="arrow"></span>
                         </a>
@@ -468,7 +472,7 @@
                 </ul>
             </div>
             <div class="header-search">
-                <form class="search-form clearfix" action="//search.mi.com/search" method="get">
+                <form id="J_searchForm" class="search-form clearfix" action="//search.mi.com/search" method="get">
                     <label for="search" class="hide">站内搜索</label>
                     <input class="search-text" type="search" id="search" name="keyword"  autocomplete="off"
                            data-search-config="{'defaultWords':[{'Key':'小米6','Rst':7},{'Key':'小米5s&nbsp;Plus','Rst':6},{'Key':'小米MIX','Rst':1},{'Key':'手环','Rst':6},{'Key':'红米Note&nbsp;4x','Rst':7},{'Key':'路由器','Rst':14},{'Key':'智能家庭套装','Rst':16},{'Key':'小米VR眼镜','Rst':4},{'Key':'移动电源','Rst':17},{'Key':'米家摄像机','Rst':6},{'Key':'优惠套装','Rst':55}]}" />
@@ -477,102 +481,10 @@
                         <a href="#">红米4X 699元起</a>
                         <a href="#">小米Max 2</a>
                     </div>
-                    <div id="J_keywordList" class="keyword-list">
-                        <ul class="result-list">
-                            <li data-key="小米6">
-                                <a href="//search.mi.com/search_%E5%B0%8F%E7%B1%B36">
-                                    <span class="keyword"></span> 小米6<span class="result">约有7件</span>
-                                </a>
-                            </li>
-                            <li data-key="小米5s&nbsp;Plus">
-                                <a href="//search.mi.com/search_%E5%B0%8F%E7%B1%B35s%C2%A0Plus">
-                                    <span class="keyword"></span> 小米5s&nbsp;Plus<span class="result">约有6件</span>
-                                </a>
-                            </li>
-                            <li data-key="小米MIX">
-                                <a href="//search.mi.com/search_%E5%B0%8F%E7%B1%B3MIX"><span class="keyword"></span> 小米MIX<span class="result">约有1件</span></a>
-                            </li>
-                            <li data-key="手环">
-                                <a href="//search.mi.com/search_%E6%89%8B%E7%8E%AF"><span class="keyword"></span> 手环<span class="result">约有6件</span></a>
-                            </li>
-                            <li data-key="红米Note&nbsp;4x">
-                                <a href="//search.mi.com/search_%E7%BA%A2%E7%B1%B3Note%C2%A04x"><span class="keyword"></span> 红米Note&nbsp;4x<span class="result">约有7件</span></a>
-                            </li>
-                            <li data-key="路由器">
-                                <a href="//search.mi.com/search_%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="keyword"></span> 路由器<span class="result">约有14件</span></a>
-                            </li>
-                            <li data-key="智能家庭套装">
-                                <a href="//search.mi.com/search_%E6%99%BA%E8%83%BD%E5%AE%B6%E5%BA%AD%E5%A5%97%E8%A3%85"><span class="keyword"></span> 智能家庭套装<span class="result">约有16件</span></a>
-                            </li>
-                            <li data-key="小米VR眼镜">
-                                <a href="//search.mi.com/search_%E5%B0%8F%E7%B1%B3VR%E7%9C%BC%E9%95%9C"><span class="keyword"></span> 小米VR眼镜<span class="result">约有4件</span></a>
-                            </li>
-                            <li data-key="移动电源">
-                                <a href="//search.mi.com/search_%E7%A7%BB%E5%8A%A8%E7%94%B5%E6%BA%90"><span class="keyword"></span> 移动电源<span class="result">约有17件</span></a>
-                            </li>
-                            <li data-key="米家摄像机">
-                                <a href="//search.mi.com/search_%E7%B1%B3%E5%AE%B6%E6%91%84%E5%83%8F%E6%9C%BA"><span class="keyword"></span> 米家摄像机<span class="result">约有6件</span></a>
-                            </li>
-                            <li data-key="优惠套装">
-                                <a href="//search.mi.com/search_%E4%BC%98%E6%83%A0%E5%A5%97%E8%A3%85"><span class="keyword"></span> 优惠套装<span class="result">约有55件</span></a>
-                            </li>
-                        </ul>
-                    </div>
                 </form>
             </div>
         </div>
-        <div id="J_navMenu" class="header-nav-menu header-nav-menu-active hide">
-            <div class="container">
-                <ul class="children-list clearfix">
-                    <li class="first">
-                        <div class="figure figure-thumb">
-                            <a href="//www.mi.com/mi6/" data-stat-id="b6b7eb5ab41e1e67" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-b6b7eb5ab41e1e67', '//www.mi.com/mi6/', 'pcpid', '']);"><img src="//c1.mifile.cn/f/i/g/2015/cn-index/xm6_320.png" data-src="//c1.mifile.cn/f/i/g/2015/cn-index/xm6_320.png" srcset="//c1.mifile.cn/f/i/g/2015/cn-index/xm6_320.png 2x" alt="小米6" width="160" height="110"></a>
-                        </div>
-                        <div class="title">
-                            <a href="//www.mi.com/mi6/" data-stat-id="a5af4fb60f65152d" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-a5af4fb60f65152d', '//www.mi.com/mi6/', 'pcpid', '']);">小米6</a>
-                        </div>
-                        <p class="price">2499元起</p>
-                        <div class="flags"><div class="flag">新品</div></div>
-                    </li>
-                    <li>
-                        <div class="figure figure-thumb">
-                            <a href="//www.mi.com/max2/" data-stat-id="ddab6416a312dce2" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-ddab6416a312dce2', '//www.mi.com/max2/', 'pcpid', '']);"><img src="//c1.mifile.cn/f/i/g/2015/cn-index/max2_toubu.png" data-src="//c1.mifile.cn/f/i/g/2015/cn-index/max2_toubu.png" srcset="//c1.mifile.cn/f/i/g/2015/cn-index/max2_toubu.png 2x" alt="小米Max 2" width="160" height="110"></a>
-                        </div>
-                        <div class="title"><a href="//www.mi.com/max2/" data-stat-id="73a8e4608d0b867e" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-73a8e4608d0b867e', '//www.mi.com/max2/', 'pcpid', '']);">小米Max 2</a></div>
-                        <p class="price">1699元起</p>
-                        <div class="flags"><div class="flag">新品</div></div>
-                    </li>
-                    <li>
-                        <div class="figure figure-thumb">
-                            <a href="//www.mi.com/minote2/" data-stat-id="03b13dbaa4786e91" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-03b13dbaa4786e91', '//www.mi.com/minote2/', 'pcpid', '']);"><img src="//c1.mifile.cn/f/i/g/2015/xiaomiNOTE2-320-220!160x110.jpg" data-src="//c1.mifile.cn/f/i/g/2015/xiaomiNOTE2-320-220!160x110.jpg" srcset="//c1.mifile.cn/f/i/g/2015/xiaomiNOTE2-320-220!320x220.jpg 2x" alt="小米Note 2" width="160" height="110"></a>
-                        </div>
-                        <div class="title"><a href="//www.mi.com/minote2/" data-stat-id="0873f6e2764f8324" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-0873f6e2764f8324', '//www.mi.com/minote2/', 'pcpid', '']);">小米Note 2</a></div>
-                        <p class="price">2799元起</p>                                    <div class="flags"><div class="flag">现货</div></div>
-                    </li>
-                    <li>
-                        <div class="figure figure-thumb">
-                            <a href="//www.mi.com/mix/" data-stat-id="cf7ac35c186d7676" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-cf7ac35c186d7676', '//www.mi.com/mix/', 'pcpid', '']);"><img src="//c1.mifile.cn/f/i/g/2015/MIX-320-220!160x110.jpg" data-src="//c1.mifile.cn/f/i/g/2015/MIX-320-220!160x110.jpg" srcset="//c1.mifile.cn/f/i/g/2015/MIX-320-220!320x220.jpg 2x" alt="小米MIX" width="160" height="110"></a>
-                        </div>
-                        <div class="title"><a href="//www.mi.com/mix/" data-stat-id="ff93591a0864a206" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-ff93591a0864a206', '//www.mi.com/mix/', 'pcpid', '']);">小米MIX</a></div>
-                        <p class="price">3499元起</p>                                    <div class="flags"><div class="flag">现货</div></div>
-                    </li>
-                    <li>
-                        <div class="figure figure-thumb">
-                            <a href="//www.mi.com/mi5splus/" data-stat-id="493a934eb2b99f74" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-493a934eb2b99f74', '//www.mi.com/mi5splus/', 'pcpid', '']);"><img src="//c1.mifile.cn/f/i/g/2015/5spluse320_220!160x110.jpg" data-src="//c1.mifile.cn/f/i/g/2015/5spluse320_220!160x110.jpg" srcset="//c1.mifile.cn/f/i/g/2015/5spluse320_220!320x220.jpg 2x" alt="小米5s Plus" width="160" height="110"></a>
-                        </div>
-                        <div class="title"><a href="//www.mi.com/mi5splus/" data-stat-id="412ad6794b1d4224" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-412ad6794b1d4224', '//www.mi.com/mi5splus/', 'pcpid', '']);">小米5s Plus</a></div>
-                        <p class="price">2299元起</p>
-                    </li>
-                    <li>
-                        <div class="figure figure-thumb">
-                            <a href="//www.mi.com/mi5c/" data-stat-id="584fcaa2a7e34475" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-584fcaa2a7e34475', '//www.mi.com/mi5c/', 'pcpid', '']);"><img src="//c1.mifile.cn/f/i/g/2015/cn-index/mi5c_320x220.png" data-src="//c1.mifile.cn/f/i/g/2015/cn-index/mi5c_320x220.png" srcset="//c1.mifile.cn/f/i/g/2015/cn-index/mi5c_320x220.png 2x" alt="小米手机5c" width="160" height="110"></a>
-                        </div>
-                        <div class="title"><a href="//www.mi.com/mi5c/" data-stat-id="2946faca010288bd" onclick="_msq.push(['trackEvent', '79fe2eae924d2a2e-2946faca010288bd', '//www.mi.com/mi5c/', 'pcpid', '']);">小米手机5c</a></div>
-                        <p class="price">1499元</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
+    <script src="js/index.js"></script>
 </body>
 </html>
