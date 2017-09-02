@@ -1,0 +1,14 @@
+.site-header .nav-category .link-category {visibility: hidden}
+.site-category {display: block}
+.site-category-list {
+    height: 420px;
+    border: 0;
+ /*   padding: 20px 0;*/
+    color: #ffffff;
+    background: #333333;
+    background: rgba(0,0,0,0.6);
+}
+.site-category-list .title {color: #fff}
+.site-category-list .title i {color: #ffffff;
+                             color: rgba(255,255,255,0.5);
+}
